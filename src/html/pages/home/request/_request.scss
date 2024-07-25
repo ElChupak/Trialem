@@ -1,0 +1,19 @@
+@use '../../../../styles/mixins'as*;
+
+
+.request {
+    background-image: linear-gradient(90deg, rgb(56, 28, 117) 90%, rgba(255, 252, 0, 0) 90%);
+    background-size: 100% 60rem;
+    padding-block: 8rem 10rem ;
+    background-repeat: no-repeat;
+    background-position: left top;
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+    }
+
+    .form-wrapper {
+        padding-left: 7rem;
+    }
+}

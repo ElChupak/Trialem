@@ -1,0 +1,21 @@
+@use '../../../../styles/mixins'as*;
+
+.hero {
+    background: url('/src/assets/images/home/hero-bg.webp') center/cover no-repeat;
+    @include bg-cover;
+    &__inner {
+        height: 80.6rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .title {
+        margin-bottom: 5rem;
+    }
+    .text {
+        margin-bottom: 2.5rem;
+        max-width: 31rem;
+    }
+}

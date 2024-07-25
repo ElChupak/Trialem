@@ -1,0 +1,75 @@
+
+.icon {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    &::before {
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: currentColor;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+}
+
+.icon-location {
+    &::before {
+        mask-image: var(--icon-location);
+    }
+}
+
+.icon-phone {
+    &::before {
+        mask-image: var(--icon-phone);
+    }
+}
+
+.icon-fb {
+    &::before {
+        mask-image: var(--icon-fb);
+    }
+}
+
+.icon-insta {
+    &::before {
+        mask-image: var(--icon-insta);
+    }
+}
+
+.icon-x {
+    &::before {
+        mask-image: var(--icon-x);
+    }
+}
+
+.icon-youtube {
+    &::before {
+        mask-image: var(--icon-youtube);
+    }
+}
+
+.title {
+    font-size: 6.2rem;
+    font-family: var(--ff-secondary);
+    line-height: 7.3rem;
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 0.4rem;
+        background-color: var(--c-pink);
+        margin-bottom: 2.5rem;
+    }
+}
+
+.text {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 300;
+}

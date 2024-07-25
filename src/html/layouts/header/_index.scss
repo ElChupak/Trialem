@@ -1,0 +1,57 @@
+@use '../../../styles/mixins'as*;
+
+.header {
+    background-color: #212223;
+    color: var(--c-white);
+    &-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.header-top {
+    border-bottom: .1rem solid var(--c-white);
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-block: 1.2rem;
+    }
+}
+
+.header-bottom {
+    padding: 3rem 0;
+}
+
+.contact-info {
+    display: flex;
+    gap: 4rem;
+    &__link {
+        transition: color .3s ease-in-out;
+        @include hover {
+            color: var(--c-pink);
+        }
+        &::before {
+            background-color: var(--c-lightgrey);
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 3.2rem;
+    &__link {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 300;
+        transition: color .3s ease-in-out;
+        @include hover {
+            color: var(--c-pink);
+        }
+    }
+}

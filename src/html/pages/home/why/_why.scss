@@ -1,0 +1,76 @@
+@use '../../../../styles/mixins'as*;
+
+.why {
+    padding-block: 10rem 21rem;
+    background: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
+    background-size: 800px, 95% 85%;
+    background-repeat: no-repeat;
+    background-position: left 10rem top 14rem, right top;
+    &__inner {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .title {
+        margin-bottom: 5rem;
+    }
+
+    .content {
+        max-width: 52rem;
+    }
+    
+}
+
+.advantages-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+}
+
+.advantage-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        @include mask-contain;
+        background-color: #fff;
+    }
+
+    &.icon-percent {
+        &::before {
+            mask-image: var(--icon-percent);
+        }
+    }
+
+    &.icon-bicycle {
+        &::before {
+            mask-image: var(--icon-bicycle);
+        }
+    }
+
+    &.icon-commenting {
+        &::before {
+            mask-image: var(--icon-commenting);
+        }
+    }
+
+    &.icon-location {
+        &::before {
+            mask-image: var(--icon-location);
+        }
+    }
+}
