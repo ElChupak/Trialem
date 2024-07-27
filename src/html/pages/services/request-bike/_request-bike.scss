@@ -1,0 +1,30 @@
+// @use '../../../styles/mixins'as*;
+
+
+.request-bike {
+    padding-block: 10rem 12rem ;
+    background: url('/src/assets/images/services/green.webp') right/cover no-repeat;
+    background-size: auto 66rem;
+
+    &__inner {
+        display: flex;
+    }
+
+    .form-wrapper {
+        background-color: #F2FAFF;
+        max-width: 45rem;
+        padding: 5rem 4rem;
+    }
+
+    &__form {
+        color: var(--c-dark);
+
+        .request-form__input {
+            border-color: var(--c-lightgrey);
+            &::placeholder {
+                color: var(--c-lightgrey);
+            }
+        }
+
+    }
+}

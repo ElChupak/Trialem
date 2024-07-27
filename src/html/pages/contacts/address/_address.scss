@@ -1,0 +1,65 @@
+@use '../../../../styles/mixins'as*;
+
+
+
+.address-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-block: 4rem;
+    margin-bottom: 2rem;
+}
+
+.address-card {
+    position: relative;
+    min-height: 10rem;
+    padding-left: 13rem;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 10rem;
+        height: 10rem;
+    }
+
+    &::before {
+        background-color: var(--c-pink);
+        border-radius: 50%;
+    }
+
+    &::after {
+        width: 5rem;
+        height: 5rem;
+        left: 2.5rem;
+        top: 2.5rem;
+        @include mask-contain;
+        mask-image: var(--icon-location);
+        background-color: var(--c-white);
+    }
+
+    &--phone {
+        &::after {
+            mask-image: var(--icon-phone);
+        }
+    }
+
+    &--mail {
+        &::after {
+            mask-image: var(--icon-email);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 2rem;
+    }
+
+    &__text,
+    &__link {
+        font-weight: 300;
+    }
+}

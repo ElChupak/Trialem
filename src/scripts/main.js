@@ -16,7 +16,8 @@ let scroll = window.scrollY;
 // Swiper Slider
 
 const swiper = new Swiper('.feedback .swiper', {
-    slidesPerViev: 2,
+    slidesPerView: 2,
+    // loop: true,
   
     navigation: {
       nextEl: '.slider-btn--next',
@@ -24,3 +25,35 @@ const swiper = new Swiper('.feedback .swiper', {
     },
   
   });
+
+
+// Tabs 
+
+const showTabs = (tabsNav, tabsContent) => {  
+  tabsNav?.forEach((navLink, index) => {  //tabsNav? - чи існує елемет
+
+    navLink?.addEventListener('click', () => {
+      tabsNav.forEach(link => {
+        link.classList.remove('active');
+      })
+
+
+    navLink.classList.add('active');
+
+    let navIndex = index;
+
+      tabsContent.forEach((contentItem, index) => {
+        contentItem.classList.remove('active');
+
+        if(index === navIndex) {
+        contentItem.classList.add('active');
+        }
+      });
+    });
+  });
+};
+
+const tabsNav = document.querySelectorAll('.bikes .tabs-nav__link'),
+      tabsContent = document.querySelectorAll('.bikes .tabs-content');
+
+showTabs(tabsNav, tabsContent);

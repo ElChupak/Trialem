@@ -41,10 +41,17 @@
     }
 }
 .insta-blog {
+    width: 27rem;
     &__list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        li {
+        cursor: pointer;
+            img {
+                object-fit: cover;
+            }
+        }
     }
 }
 

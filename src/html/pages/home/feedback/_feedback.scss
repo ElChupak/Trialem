@@ -4,7 +4,7 @@
     padding-block: 8rem 6rem;
     &__inner {
         display: grid;
-        grid-template-columns: 30rem 95rem;
+        grid-template-columns: 30rem 90rem;
     }
 
     .title {
@@ -29,6 +29,7 @@
         outline: .2rem solid transparent;
         outline-offset: 0;
         transition: .3s ease-in-out;
+        user-select: none;
 
         &::before {
             content: '';
@@ -76,10 +77,12 @@
 }
 
 .feedback-card {
-    max-width: 43rem;
-    padding: 5.5rem;
-    // box-shadow: 2rem 2rem 2rem 1rem #000;
-    background-color: #d4d4d4;
+    width: 40rem;
+    height: 23rem;
+    padding: 4rem;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.07);
+    margin: 2rem .5rem 2rem .5rem;
+    user-select: none;
 
     &__body {
         margin-bottom: 2rem;

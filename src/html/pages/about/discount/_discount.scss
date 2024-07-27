@@ -1,0 +1,22 @@
+@use '../../../../styles/mixins'as*;
+
+
+.discount {
+    @include bg-cover;
+    padding-block: 8rem;
+
+    &__inner {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .content {
+        max-width: 40rem;
+        width: 100%;
+        margin-left: auto;
+    }
+
+    .title {
+        margin-bottom: 5rem;
+    }
+}

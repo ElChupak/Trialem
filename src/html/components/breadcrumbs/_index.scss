@@ -1,0 +1,31 @@
+@use '../../../styles/mixins'as*;
+
+
+.breadcrumbs {
+    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+
+    &__link {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: var(--c-grey);
+
+        &::after {
+            content: '/';
+            width: 1.6rem;
+            text-align: center;
+        }
+
+        &--current {
+        color: var(--c-dark);
+        
+        &::after {
+            content: none;
+        }
+        }
+    }
+}

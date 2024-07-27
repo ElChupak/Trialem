@@ -1,7 +1,7 @@
 @use '../../../styles/mixins'as*;
 
 .header {
-    background-color: #212223;
+    background-color: var(--c-dark);
     color: var(--c-white);
     &-container {
         display: flex;

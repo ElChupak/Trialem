@@ -1,0 +1,18 @@
+<extends src="html/layouts/_html.html" locals='{
+    "pageTitle": "About",
+    "pageClass": "about-page"
+}'>
+    <block name="main">
+
+        <main>
+            <include src="html/components/breadcrumbs/_index.html" locals='{"pageName": "About"}'></include>
+            <include src="html/pages/about/movement/_movement.html"></include>
+            <include src="html/pages/about/stats/_stats.html"></include>
+            <include src="html/pages/about/advantages/_advantages.html"></include>
+            <include src="html/pages/about/discount/_discount.html"></include>
+            <include src="html/sections/choose/_choose.html"></include>
+            <include src="html/sections/request/_request.html"></include>
+        </main>
+
+    </block>
+</extends>
