@@ -12,7 +12,7 @@
 
         @include hover {
             &::before {
-                background-color: gold;
+                background-color: var(--c-pink);
             }
         }
     }

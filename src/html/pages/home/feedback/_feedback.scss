@@ -2,20 +2,56 @@
 
 .feedback {
     padding-block: 8rem 6rem;
+    @include size('padding-block', 80, 35);
     &__inner {
         display: grid;
-        grid-template-columns: 30rem 90rem;
+        grid-template-columns: 30rem 86rem;
+        @include rmax($xl) {
+            display: flex;
+            flex-direction: column;
+            max-width: 93rem;
+        }
+
+        @include rmax($lg) {
+            max-width: 48rem;
+        }
+
+        @include rmax($sm) {
+            max-width: 48rem;
+        }
+
+        // @include rmax($xs) {
+        //     max-width: 40rem;
+        // }
+    }
+
+    .content {
+        @include rmax($xl) {
+            margin-inline: auto;
+            text-align: center;
+        }
+        // @include rmax($xl) {
+        //     margin-inline: auto;
+        //     text-align: center;
+        // }
     }
 
     .title {
         margin-bottom: 3.5rem;
         color: var(--c--darkgrey);
-
+        @include rmax($xl) {
+            &::before {
+                margin-inline: auto;
+            }
+        }
     }
 
     .slider-actions {
         display: flex;
         gap: 1.2rem;
+        @include rmax($xl) {
+            justify-content: center;
+        }
     }
 
     .slider-btn {
@@ -65,6 +101,10 @@
         padding-block: 3rem;
     }
 
+    .swiper {
+        width: 100%;   //!!!!!
+    }
+
     .swiper-wrapper {
         box-sizing: border-box !important;
     }
@@ -77,12 +117,19 @@
 }
 
 .feedback-card {
-    width: 40rem;
-    height: 23rem;
+    max-width: 40rem;
+    min-height: 23rem;
     padding: 4rem;
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.07);
     margin: 2rem .5rem 2rem .5rem;
     user-select: none;
+
+    @include rmax($sm) {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        min-height: 25rem;
+    }
 
     &__body {
         margin-bottom: 2rem;

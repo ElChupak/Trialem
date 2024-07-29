@@ -1,16 +1,33 @@
+@use '../../../../styles/mixins'as*;
+
 .about {
 
     &__inner {
         padding-block: 14rem 17.5rem;
         display: flex;
         justify-content: flex-end;
+        @include size('padding-top', 140, 35, $md); //when screen lower md size, value will decrease to lower number
+        @include size('padding-bottom', 175, 35, $md);
 
         background: url('/src/assets/images/home/about-bg.webp') left center no-repeat;
         background-size: 60rem;
+
+        @include rmax($md) {
+            padding-block: 3.5rem;
+            background-size: cover;
+            justify-content: center;
+
+        }
     }
 
     .content {
         max-width: 47rem;
+        background-color: rgba(#fff, 0.9);
+        @include rmax($xl) {
+            padding: 1.5rem;
+            border-radius: .5rem;
+        }
+
     }
 
     .title {

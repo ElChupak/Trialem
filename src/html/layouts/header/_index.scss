@@ -25,6 +25,12 @@
 .contact-info {
     display: flex;
     gap: 4rem;
+
+    @include rmax($md) {
+        font-size: 0;  
+        gap: 1.6rem;
+    }
+
     &__link {
         transition: color .3s ease-in-out;
         @include hover {
@@ -33,6 +39,7 @@
         &::before {
             background-color: var(--c-lightgrey);
         }
+
     }
 }
 
@@ -45,6 +52,20 @@
 .menu {
     display: flex;
     gap: 3.2rem;
+
+    @include rmax($md) {
+        position: absolute;
+        top: calc(100% - 1.5rem);
+        left: -200%;
+        width: 100%;
+        padding-block: 3rem;
+        padding-inline: 1.5rem;
+        background-color: var(--c-pink);
+        flex-direction: column;
+        gap: 2.4rem;
+        transition: .3s ease-in-out;
+    }
+
     &__link {
         text-transform: uppercase;
         font-size: 1.4rem;
@@ -53,5 +74,13 @@
         @include hover {
             color: var(--c-pink);
         }
+    }
+}
+
+.burger.active + .menu {
+    
+    @include rmax($md) {
+        left: 0;
+
     }
 }

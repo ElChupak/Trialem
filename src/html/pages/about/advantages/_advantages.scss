@@ -4,12 +4,18 @@
 .advantages {
 
     &__inner {
-        padding-block: 10rem;
+        @include size('padding-top', 100, 35);
+        @include size('padding-bottom', 100, 35);
+
         display: flex;
         justify-content: flex-start;
 
         background: url('/src/assets/images/about/about-advantages.webp') right center no-repeat;
         background-size: 60rem;
+
+        @include rmax($lg) {
+            
+        }
     }
 
     .content {
@@ -25,6 +31,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem 9rem;
+        @include rmax($xl) {
+            gap: 1.5rem;
+        }
         li {
             display: flex;
             align-items: center;

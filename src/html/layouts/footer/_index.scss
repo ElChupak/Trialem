@@ -16,6 +16,18 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2.4rem;
+        @include rmax($lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include rmax($sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__group {
+        @include rmax($lg) {
+            max-width: 30rem;
+        }
     }
 }
 
@@ -41,7 +53,7 @@
     }
 }
 .insta-blog {
-    width: 27rem;
+    width: 25rem;
     &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -70,7 +82,6 @@
         }
     }
 }
-
 
 
 .subscribe-form {

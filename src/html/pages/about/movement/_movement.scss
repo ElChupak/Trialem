@@ -5,10 +5,20 @@
 
     &__inner {
         padding-block: 6rem 10rem;
+        @include size('padding-top', 60, 0);
+        @include size('padding-bottom', 100, 0);
         display: grid;
         grid-template-columns: repeat(2, auto);
         gap: 10rem;
         align-items: center;
+        @include rmax($xl) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        @include rmax($md) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .video {
@@ -19,6 +29,11 @@
         background: url('/src/assets/santa.jpg') center/cover no-repeat;
         cursor: pointer;
         transition: box-shadow 0.2s ease-in-out;
+
+
+        @include rmax($xl) {
+            height: auto;
+        }
 
         &::after {
             content: '';
@@ -43,11 +58,21 @@
 
     .content {
         max-width: 47rem;
+        @include rmax($md) {
+            margin-inline: auto;
+            text-align: center;
+        }
     }
 
     .title {
         margin-bottom: 5rem;
         color: var(--c--darkgrey);
+        margin-bottom: 2.5rem;
+        @include rmax($md) {
+            &::before {
+                margin-inline: auto;
+            }
+        }
     }
 
     .text {
@@ -57,5 +82,8 @@
     .buttons {
         display: flex;
         gap: 1rem;
+        @include rmax($md) {
+            justify-content: center;
+        }
     }
 }

@@ -2,21 +2,57 @@
 
 .why {
     padding-block: 10rem 21rem;
+    @include size('padding-top', 100, 35);
+    @include size('padding-bottom', 210, 35);
     background: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
-    background-size: 800px, 95% 85%;
+    background-size: 50%, cover;
+    background-position: left top 8rem, center;
     background-repeat: no-repeat;
-    background-position: left 10rem top 14rem, right top;
+
+
+    @include rmin(1400) {
+        background: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
+        background-size: 800px, 95% 85%;
+        background-position: left 10rem top 14rem, right top;
+        background-repeat: no-repeat;
+    }
+
+    @include rmax($xl) {
+        background: url('/src/assets/images/home/why-bike.webp'), url('/src/assets/images/home/why-bg.webp');
+        background-size: 35%, cover;
+        background-position: right 6rem top 6rem, center;
+        background-repeat: no-repeat;
+    }
+
+    @include rmax($sm) {
+        background: url('/src/assets/images/home/why-bg.webp');
+        background-size: cover;
+        background-position: center;
+    }
+
     &__inner {
         display: flex;
         justify-content: flex-end;
+        @include rmax($xl) {
+            justify-content: center;
+        }
     }
 
     .title {
         margin-bottom: 5rem;
+        @include rmax($sm) {
+            text-align: center;
+            &::before {
+            margin-inline: auto;
+            }
+        }
     }
 
     .content {
         max-width: 52rem;
+        @include rmax($xl) {
+            max-width: 100%;
+        }
     }
     
 }
@@ -25,12 +61,21 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 4rem;
+    @include rmax($sm) {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
 }
 
 .advantage-card {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    @include rmax($sm) {
+        text-align: center;
+        max-width: 20rem;
+        align-items: center;
+    }
     &__title {
         font-size: 1.8rem;
         font-weight: 500;

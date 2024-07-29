@@ -2,18 +2,57 @@
 
 
 .request {
-    background-image: linear-gradient(90deg, rgb(56, 28, 117) 90%, rgba(255, 252, 0, 0) 90%);
+    background-image: linear-gradient(90deg, rgb(56, 28, 117) 100%, rgba(255, 252, 0, 0) 90%);
     background-size: 100% 60rem;
     padding-block: 8rem 10rem ;
+    margin-bottom: 16rem;
     background-repeat: no-repeat;
     background-position: left top;
+    @include size('padding-top', 80, 35);
+    @include size('padding-bottom', 100, 35);
+    @include rmin(1400) {
+        background-image: linear-gradient(90deg, rgb(56, 28, 117) 90%, rgba(255, 252, 0, 0) 90%);
+        background-size: 100% 60rem;
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+    @include rmax($md) {
+       background-size: 100% 100%;
+        margin-bottom: 0;
+        padding-bottom: 5rem;
+
+    }
+
     &__inner {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.6rem;
+        @include rmax($md) {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__home {
+        max-width: 45rem;
+    }
+
+    &__map {
+        padding-top: .5rem;
+        width: 100%;
+        height: 120%;
+        @include rmax($md) {
+            order: 2;
+            height: 35rem;
+        }
     }
 
     .form-wrapper {
         padding-left: 7rem;
+        @include size('padding-left', 70, 0);
+        @include rmax($md) {
+            order: 1;
+            display: block;
+            margin: 0 auto;
+        }
     }
 }
