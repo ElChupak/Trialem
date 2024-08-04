@@ -1,28 +1,42 @@
-// @use '../../../styles/mixins'as*;
+@use '../../../../styles/mixins'as*;
 
 
 .request-bike {
     padding-block: 10rem 12rem ;
+    @include size('padding-top', 100, 35);
+    @include size('padding-bottom', 120, 35);
     background: url('/src/assets/images/services/green.webp') right/cover no-repeat;
     background-size: auto 66rem;
+    @include rmax($xl) {
+        background-size: 75%;
+    }
+
+    @include rmax($md) {
+        background-size: cover;
+        background-position: center;
+    }
 
     &__inner {
         display: flex;
     }
 
     .form-wrapper {
-        background-color: #F2FAFF;
+        background-color: rgba(242, 250, 255, .95);
         max-width: 45rem;
         padding: 5rem 4rem;
+
+        @include rmax($md) {
+            margin: 0 auto;
+        }
     }
 
     &__form {
         color: var(--c-dark);
 
         .request-form__input {
-            border-color: var(--c-lightgrey);
+            border-color: var(--c-dark);
             &::placeholder {
-                color: var(--c-lightgrey);
+                color: var(--c-dark);
             }
         }
 

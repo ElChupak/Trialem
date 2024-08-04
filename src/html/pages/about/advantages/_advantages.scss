@@ -12,19 +12,42 @@
 
         background: url('/src/assets/images/about/about-advantages.webp') right center no-repeat;
         background-size: 60rem;
+        @include size('background-size', 600, 200);
+        @include rmax($md) {
+            background-position: center;
+            background-size: 60rem;
+        }
 
-        @include rmax($lg) {
-            
+        @include rmax($xs) {
+            background-size: 80rem;
         }
     }
 
     .content {
         max-width: 53rem;
+        @include rmax($md) {
+            text-align: center;
+            margin-inline: auto;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
     }
 
     .title {
         margin-bottom: 5rem;
         color: var(--c--darkgrey);
+        @include rmax($md) {
+            margin-bottom: 2.4rem;
+            &::before {
+            margin-inline: auto;
+            }
+        }
+
+        @include rmax($xs) {
+            font-size: 5rem;
+            line-height: 5.5rem;
+        }
     }
 
     .list {
@@ -34,11 +57,20 @@
         @include rmax($xl) {
             gap: 1.5rem;
         }
+
+        @include rmax($xs) {
+            grid-template-columns: 1fr;
+        }
         li {
             display: flex;
             align-items: center;
             gap: 1.2rem;
             font-weight: 300;
+
+            @include rmax($xs) {
+                padding-left: 3.5rem;
+            }
+
             &::before {
                 content: '';
                 width: 1.6rem;

@@ -1,7 +1,8 @@
 @use '../../../styles/mixins'as*;
 
 .choose-bike {
-    @include size('padding-block', 100, 35);
+    @include size('padding-top', 100, 35);
+    @include size('padding-bottom', 100, 35);
 
 
     &__inner {
@@ -50,7 +51,7 @@
                 display: block;
             }
 
-            @include rmax($xs) {
+            @include rmax($sm) {
                 display: none;
             }
         }
@@ -67,7 +68,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include rmax($xs) {
+        @include rmax($sm) {
             grid-template-columns: 1fr;
         }
     }

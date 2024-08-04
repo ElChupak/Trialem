@@ -1,10 +1,14 @@
 <extends src="html/layouts/_html.html" locals='{
     "pageTitle": "Bicycles",
-    "pageClass": "bicycles-page"
+    "pageClass": "bicycles-page",
+    "pageNav": "bicycles-nav"
 }'>
     <block name="main">
 
         <main>
+            <include src="html/pages/bicycles/modal-form/_modal-form.html" locals='{"formClassName": "bicycles-modal"}'></include>
+            
+
             <include src="html/components/breadcrumbs/_index.html" locals='{"pageName": "Bicycles"}'></include>
             <include src="html/pages/bicycles/bikes/_bikes.html"></include>
 

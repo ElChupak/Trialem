@@ -8,12 +8,26 @@
     gap: 2rem;
     padding-block: 4rem;
     margin-bottom: 2rem;
+    @include size('padding-block', 40, 10);
+    @include rmax($lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rmax($md) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .address-card {
     position: relative;
     min-height: 10rem;
     padding-left: 13rem;
+    font-size: 2rem;
+    @include size('min-height', 100, 48);
+    @include size('padding-left', 130, 60);
+    @include size('font-size', 20, 16);
+
+
 
     &::before,
     &::after {
@@ -24,6 +38,9 @@
         top: 0;
         width: 10rem;
         height: 10rem;
+        @include size('width', 100, 50);
+        @include size('height', 100, 50);
+
     }
 
     &::before {
@@ -34,8 +51,12 @@
     &::after {
         width: 5rem;
         height: 5rem;
+        @include size('width', 50, 25);
+        @include size('height', 50, 25);
         left: 2.5rem;
         top: 2.5rem;
+        @include size('left', 25, 12.5);
+        @include size('top', 25, 12.5);
         @include mask-contain;
         mask-image: var(--icon-location);
         background-color: var(--c-white);
@@ -56,10 +77,13 @@
     &__title {
         font-weight: 500;
         font-size: 2rem;
+        @include size('font-size', 20, 16);
+
     }
 
     &__text,
     &__link {
+        display: block;
         font-weight: 300;
     }
 }

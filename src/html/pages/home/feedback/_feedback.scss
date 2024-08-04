@@ -1,11 +1,11 @@
 @use '../../../../styles/mixins'as*;
 
 .feedback {
-    padding-block: 8rem 6rem;
-    @include size('padding-block', 80, 35);
+    padding-top: 8rem;
+    @include size('padding-top', 80, 35);
     &__inner {
         display: grid;
-        grid-template-columns: 30rem 86rem;
+        grid-template-columns: 30rem 90rem;
         @include rmax($xl) {
             display: flex;
             flex-direction: column;
@@ -129,6 +129,10 @@
         flex-wrap: wrap;
         align-content: space-between;
         min-height: 25rem;
+    }
+
+    @include rmax($xs) {
+        min-height: 30rem;
     }
 
     &__body {

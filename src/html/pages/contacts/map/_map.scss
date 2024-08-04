@@ -1,5 +1,10 @@
+@use '../../../../styles/mixins'as*;
+
+
 .map {
     padding-bottom: 10rem;
+    @include size('padding-bottom', 100, 35);
+
 }
 
 .iframe-map {
@@ -8,4 +13,6 @@
     height: 60rem;
     display: block;
     margin: 0 auto;
+    @include size('height', 600, 400);
+
 }

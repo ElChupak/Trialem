@@ -1,5 +1,7 @@
 @use '../../../styles/mixins'as*;
 
+
+
 .request-form {
     color: var(--c-white);
     &__title {
@@ -30,6 +32,7 @@
         width: 100%;
         outline: 0;
         caret-color: #fff;
+        color: #fff;
         transition: border-color 0.2s ease-in-out;
         &::placeholder {
         color: #fff;
@@ -50,6 +53,60 @@
             @include bg-contain;
             mask-image: var(--icon-check);
             background-color: #1BCB42;
+            mask-repeat: no-repeat;
         }
     }
 }
+
+
+.request-form__btn {
+    position: relative;
+    min-width: 20rem;
+    width: auto;
+    height: 4rem;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0px 10px 15px 0px #45000059;
+    transition: none;
+
+    span {
+        letter-spacing: 1px;
+        transition: top 0.5s;
+        transition: .3s ease-in-out;
+        text-align: center;
+        
+    }
+}
+
+.btn-text-one {
+position: absolute;
+width: 100%;
+top: 50%;
+transform: translateY(-50%);
+}
+
+.btn-text-two {
+position: absolute;
+width: 100%;
+top: 150%;
+transform: translateY(-50%);
+}
+
+.request-form__btn.sent .btn-text-one {
+top: -100%;
+}
+
+.request-form__btn.sent .btn-text-two {
+top: 50%;
+}
+
+.request-form__btn:hover {
+box-shadow: none;
+transform: translateY(1px);
+background-color: var(--c-pink);
+border-color: var(--c-pink);
+color: var(--c-white);
+}
+
+  
+

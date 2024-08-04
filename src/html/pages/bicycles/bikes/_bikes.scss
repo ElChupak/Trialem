@@ -2,11 +2,17 @@
 
 .bikes {
     padding-block: 7rem 9rem;
+    @include size('padding-top', 70, 10);
+    @include size('padding-bottom', 90, 35);
+
 
     .tabs {
 
         &__wrapper {
             width: calc(100% + 10rem);
+            @include rmax(1400) {
+                width: auto;
+            }
         }
 
         &-nav {
@@ -15,6 +21,8 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 4.5rem;
+            @include size('margin-bottom', 45, 10);
+
 
             &__link {
                 display: flex;
@@ -63,5 +71,33 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 2.4rem;
         padding: 3rem;
+        // padding-right: 50px;
+        @include rmax(1400) {
+            grid-template-columns: repeat(3, 30rem);
+            justify-items: center;
+            justify-content: center;
+        }
+        
+        @include rmax($xl) {
+            justify-content: start;
+            gap: 1.5rem;
+        }
+
+        @include rmax($lg) {
+            grid-template-columns: repeat(2, 30rem);
+            justify-content: center;
+            padding-left: 0;
+            
+        }
+
+        @include rmax($md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include rmax($xs) {
+            padding-left: 10%;
+        }
     }
 }

@@ -5,6 +5,30 @@
     @include bg-cover;
     padding-block: 8rem;
 
+    @include size('padding-block', 80, 35);
+
+    @include rmax($xl) {
+        background-position: 15% 0;
+    }
+
+    @include rmax($lg) {
+        background-position: 25% 0;
+    }
+
+    @include rmax($md) {
+        background-position: 35% 0;
+    }
+
+    @include rmax($sm) {
+        background-position: 30% 0;
+        // background-size: 50%;
+    }
+
+    @include rmax($xs) {
+        background-position: 17% 0;
+        // background-size: 50%;
+    }
+
     &__inner {
         display: flex;
         justify-content: flex-end;
@@ -14,9 +38,30 @@
         max-width: 40rem;
         width: 100%;
         margin-left: auto;
+        @include rmax($md) {
+            margin-inline: auto;
+        }
     }
 
     .title {
         margin-bottom: 5rem;
+        @include rmax($md) {
+            text-align: center;
+            &::before {
+                margin-inline: auto;
+            }
+        }
+
+        @include rmax($sm) {
+        color: #fff;
+        }
     }
+
+    .btn {
+        @include rmax($md) {
+            margin-inline: auto;
+        }
+    }
+
+
 }

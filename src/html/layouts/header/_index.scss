@@ -3,6 +3,11 @@
 .header {
     background-color: var(--c-dark);
     color: var(--c-white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
     &-container {
         display: flex;
         justify-content: space-between;
@@ -20,6 +25,9 @@
 
 .header-bottom {
     padding-block: 1rem 2rem;
+    @include rmax($md) {
+        padding-block: 1rem;
+    }
 }
 
 .contact-info {
@@ -55,7 +63,7 @@
 
     @include rmax($md) {
         position: absolute;
-        top: calc(100% - 1.5rem);
+        top: 100%;
         left: -200%;
         width: 100%;
         padding-block: 3rem;
@@ -67,14 +75,30 @@
     }
 
     &__link {
+        position: relative;
         text-transform: uppercase;
         font-size: 1.4rem;
         font-weight: 300;
         transition: color .3s ease-in-out;
+        padding-bottom: .5rem;
         @include hover {
             color: var(--c-pink);
         }
+        &.active {
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 110%;
+                height: .1rem;
+                background-color: #fff;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
+
 }
 
 .burger.active + .menu {
