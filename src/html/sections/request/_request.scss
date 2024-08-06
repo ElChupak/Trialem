@@ -20,7 +20,7 @@
         background-position: left top;
     }
     @include rmax($md) {
-       background-size: 100% 100%;
+        background-size: 100% 100%;
         margin-bottom: 0;
         padding-bottom: 5rem;
 

@@ -2,6 +2,7 @@
 
 
 .request-bike {
+    position: relative;
     padding-block: 10rem 12rem ;
     @include size('padding-top', 100, 35);
     @include size('padding-bottom', 120, 35);
@@ -39,6 +40,12 @@
                 color: var(--c-dark);
             }
         }
+
+    }
+    .scroll-link {
+        position: absolute;
+        top: -12rem;
+        @include size('top', -120, -100);
 
     }
 }

@@ -1,8 +1,8 @@
 @use '../../../../styles/mixins'as*;
 
 .feedback {
-    padding-top: 8rem;
-    @include size('padding-top', 80, 35);
+    padding-top: 3rem;
+    margin-bottom: 3rem;
     &__inner {
         display: grid;
         grid-template-columns: 30rem 90rem;

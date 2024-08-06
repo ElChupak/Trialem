@@ -185,7 +185,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
       document.body.style.overflow = '';
       document.body.style.marginRight = `0px`;
       header.style.marginRight = `0px`;
-    
     });
 
     modal?.addEventListener('click', (e)=>{
@@ -194,7 +193,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
         document.body.style.overflow = '';
         document.body.style.marginRight = `0px`;
         header.style.marginRight = `0px`;
-
       }
     });
 
@@ -212,10 +210,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const sentBtn = document.getElementById('send-btn');
 
   sentBtn?.addEventListener('click', ()=>{
-    modalWindow.style.display = 'none';
-    document.body.style.overflow = '';
-    document.body.style.marginRight = `0px`;
-    header.style.marginRight = `0px`;
+    setTimeout(() => {
+      modalWindow.style.display = 'none';
+      document.body.style.overflow = '';
+      document.body.style.marginRight = `0px`;
+      header.style.marginRight = `0px`;
+    }, 2000)
   });
 
   function calcScroll() {

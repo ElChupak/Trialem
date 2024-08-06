@@ -3,6 +3,9 @@
 @use './rental/rental';
 @use './why/why';
 @use './feedback/feedback';
+@use './cookies/cookies';
+@use './policy/policy';
+
 
 
 
@@ -23,6 +26,18 @@
     }
   }   
 
+}
 
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--c-pink);
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--c-dark);
 }
 

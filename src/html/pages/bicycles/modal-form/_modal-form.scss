@@ -31,13 +31,14 @@
     .modal-close {
         cursor: pointer;
         position: absolute;
-        font-size: 2.4rem;
+        font-size: 6rem;
+        line-height: 5rem;
         right: 5%;
-        top: 3.7rem;
+        top: 2.8rem;
         transition: all 0.3s;
         color: var(--c-pink);
         @include hover {
-           transform: scale(1.05);
+            color: var(--c-white);
         }
     }
 }
