@@ -1,7 +1,6 @@
 import vituum from 'vituum';
 import posthtml from '@vituum/vite-plugin-posthtml';
 import postcss from '@vituum/vite-plugin-postcss';
-import { copyFileSync } from 'fs';
 
 export default {
   plugins: [
@@ -23,13 +22,6 @@ export default {
         }
       },
     }, 
-    {
-      name: 'copy-static-files',
-      writeBundle() {
-        copyFileSync('src/android-chrome-192x192.png', 'dist/android-chrome-192x192.png');
-        copyFileSync('src/android-chrome-512x512.png', 'dist/android-chrome-512x512.png');
-      },
-    },
   ],
 
   build: {
@@ -73,9 +65,5 @@ export default {
       }
     },
   },
-
-  // server: {
-  //   port: 5501,
-  // },
 };
 

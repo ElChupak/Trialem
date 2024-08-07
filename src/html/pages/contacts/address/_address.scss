@@ -1,7 +1,5 @@
 @use '../../../../styles/mixins'as*;
 
-
-
 .address-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -16,62 +14,24 @@
     @include rmax($md) {
         grid-template-columns: 1fr;
     }
+
+    li {
+        display: flex;
+        align-items: center
+    }
 }
 
 .address-card {
     position: relative;
     min-height: 10rem;
-    padding-left: 13rem;
     font-size: 2rem;
     @include size('min-height', 100, 48);
-    @include size('padding-left', 130, 60);
     @include size('font-size', 20, 16);
 
-
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        width: 10rem;
-        height: 10rem;
-        @include size('width', 100, 50);
-        @include size('height', 100, 50);
-
-    }
-
-    &::before {
-        background-color: var(--c-pink);
-        border-radius: 50%;
-    }
-
-    &::after {
-        width: 5rem;
-        height: 5rem;
-        @include size('width', 50, 25);
-        @include size('height', 50, 25);
-        left: 2.5rem;
-        top: 2.5rem;
-        @include size('left', 25, 12.5);
-        @include size('top', 25, 12.5);
-        @include mask-contain;
-        mask-image: var(--icon-location);
-        background-color: var(--c-white);
-    }
-
-    &--phone {
-        &::after {
-            mask-image: var(--icon-phone);
-        }
-    }
-
-    &--mail {
-        &::after {
-            mask-image: var(--icon-email);
-        }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &__title {
@@ -86,4 +46,42 @@
         display: block;
         font-weight: 300;
     }
+}
+
+.address-circle {
+    position: relative;
+    background-color: var(--c-pink);
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    @include size('width', 100, 50);
+    @include size('height', 100, 50);
+    margin-right: 1.5rem;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% , -50%);
+        width: 5rem;
+        height: 5rem;
+        @include size('width', 50, 25);
+        @include size('height', 50, 25);
+        @include mask-contain;
+        mask-image: var(--icon-location);
+        background-color: var(--c-white);
+    }
+
+    &__phone {
+        &::after {
+        mask-image: var(--icon-phone);
+    }
+    }
+
+    &__mail {
+        &::after {
+            mask-image: var(--icon-email);
+        }
+    }
+
 }

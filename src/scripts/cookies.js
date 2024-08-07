@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
         }
     });
 
-    pClose.addEventListener('click', ()=>{
+    pClose?.addEventListener('click', ()=>{
         policy.classList.remove('active')
         document.body.style.overflow = 'auto'
     });

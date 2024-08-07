@@ -18,19 +18,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
     headerEl.classList.add('scrolled');
   }
 
-
-  //Loader 
-
-  // const loader = document.querySelector('.loader')
-
-  // window.addEventListener('load', () => {
-  //   setTimeout(() => {
-  //     loader.style.display = 'none';
-  //   }, 600)
-
-  // })
-
-
   // Swiper Slider
 
   const swiper = new Swiper('.feedback .swiper', {
